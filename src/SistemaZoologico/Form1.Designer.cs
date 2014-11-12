@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboxtipodeboleto = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -101,13 +101,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Tipo De Boleto";
             // 
-            // comboBox1
+            // comboxtipodeboleto
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(106, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
+            this.comboxtipodeboleto.DisplayMember = "Nombre";
+            this.comboxtipodeboleto.FormattingEnabled = true;
+            this.comboxtipodeboleto.Location = new System.Drawing.Point(106, 111);
+            this.comboxtipodeboleto.Name = "comboxtipodeboleto";
+            this.comboxtipodeboleto.Size = new System.Drawing.Size(121, 21);
+            this.comboxtipodeboleto.TabIndex = 7;
             // 
             // button1
             // 
@@ -163,7 +164,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboxtipodeboleto);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
@@ -189,7 +190,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboxtipodeboleto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
