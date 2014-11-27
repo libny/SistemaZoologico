@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaZoologico.VentaBoletos;
 
 namespace SistemaZoologico
 {
@@ -16,7 +17,7 @@ namespace SistemaZoologico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new VentaBoletos.VentaBoletos());
         }
     }
 }

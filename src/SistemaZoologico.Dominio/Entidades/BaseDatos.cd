@@ -30,15 +30,12 @@
   <Class Name="SistemaZoologico.Dominio.Entidades.Venta">
     <Position X="11" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACgAAAAAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACgAAAAAAAAAAAAACAAAAAAAAQQAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entidades\Venta.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Cliente" />
     </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Property Name="Detalle" />
-    </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SistemaZoologico.Dominio.Entidades.Animal">

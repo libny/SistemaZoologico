@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using SistemaZoologico.Dominio.Aplicacion.VentaBoletos;
-using SistemaZoologico.Dominio.Entidades;
 
-namespace SistemaZoologico
+namespace SistemaZoologico.VentaBoletos
 {
-    public partial class Form1 : Form
+    public partial class VentaBoletos : Form
     {
         
-        private ServicioVentaBoletos _servicioVentaBoletos =new ServicioVentaBoletos();
+        private readonly ServicioVentaBoletos _servicioVentaBoletos =new ServicioVentaBoletos();
 
-        public Form1()
+        public VentaBoletos()
         {
             InitializeComponent();
         }
@@ -19,6 +17,11 @@ namespace SistemaZoologico
         private void Form1_Load(object sender, EventArgs e)
         {
            comboxtipodeboleto.DataSource = _servicioVentaBoletos.ObtenerTipoBoletos() ;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
