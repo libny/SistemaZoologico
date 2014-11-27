@@ -17,7 +17,7 @@ namespace SistemaZoologico.Dominio.Entidades
 
         public virtual Cliente Cliente { get; set; }
 
-        public virtual List<DetalleVenta> Detalle { get; set; }
+        public virtual IList<DetalleVenta> Detalle { get; set; }
 
         public virtual float Total { get; set; }
 
@@ -27,6 +27,14 @@ namespace SistemaZoologico.Dominio.Entidades
         {
             Detalle.Add(new DetalleVenta(tipoBoleto, cantidad));
         
+        }
+
+        public virtual void CalcularTotal()
+        {
+            foreach (var detalleVenta in Detalle)
+            {
+                Total = Total + (detalleVenta.CalcularSubTotal());
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using NHibernate;
 using NHibernate.Linq;
+using NHibernate.Param;
 using SistemaZoologico.Dominio.Aplicacion.VentaBoletos.Commandos;
 using SistemaZoologico.Dominio.Datos;
 using SistemaZoologico.Dominio.Entidades;
@@ -34,6 +35,10 @@ namespace SistemaZoologico.Dominio.Aplicacion.VentaBoletos
                     {
                         venta.AgregarDetalle(session.Get<TipoBoleto>(datosDetalleVenta.IdTipoBoleto), datosDetalleVenta.Cantidad);
                     }
+
+                    venta.CalcularTotal();
+                    session.SaveOrUpdate(venta);
+                    transaccion.Commit();
                 }
             }
         }

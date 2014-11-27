@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboxtipodeboleto = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
+            this.dtgDetalleVenta = new System.Windows.Forms.DataGridView();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,12 +53,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre Cliente";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(106, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNombre.Location = new System.Drawing.Point(106, 12);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 1;
             // 
             // label2
             // 
@@ -69,12 +69,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Apellido Cliente";
             // 
-            // textBox2
+            // txtApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(106, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtApellido.Location = new System.Drawing.Point(106, 44);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.TabIndex = 3;
             // 
             // label3
             // 
@@ -85,12 +85,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Telefono Cliente";
             // 
-            // textBox3
+            // txtTelefono
             // 
-            this.textBox3.Location = new System.Drawing.Point(106, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.txtTelefono.Location = new System.Drawing.Point(106, 79);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 5;
             // 
             // label4
             // 
@@ -120,22 +120,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // dtgDetalleVenta
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 150);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(441, 247);
-            this.dataGridView1.TabIndex = 9;
+            this.dtgDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDetalleVenta.Location = new System.Drawing.Point(18, 150);
+            this.dtgDetalleVenta.Name = "dtgDetalleVenta";
+            this.dtgDetalleVenta.Size = new System.Drawing.Size(441, 247);
+            this.dtgDetalleVenta.TabIndex = 9;
+            this.dtgDetalleVenta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDetalleVenta_CellEndEdit);
             // 
-            // label5
+            // lblTotal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(388, 442);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Total";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(388, 442);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(31, 13);
+            this.lblTotal.TabIndex = 10;
+            this.lblTotal.Text = "Total";
             // 
             // button2
             // 
@@ -145,6 +146,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Aceptar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -154,6 +156,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // VentaBoletos
             // 
@@ -162,21 +165,21 @@
             this.ClientSize = new System.Drawing.Size(486, 488);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.dtgDetalleVenta);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboxtipodeboleto);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Name = "VentaBoletos";
             this.Text = "VentaBoletos";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,16 +188,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboxtipodeboleto;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dtgDetalleVenta;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }
