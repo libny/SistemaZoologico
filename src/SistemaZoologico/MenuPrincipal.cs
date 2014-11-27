@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SistemaZoologico.VentaBoletos;
 
 namespace SistemaZoologico
 {
@@ -15,6 +16,14 @@ namespace SistemaZoologico
             using (var venta = new VentaBoletos.VentaBoletos())
             {
                 venta.ShowDialog();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var tipo = new CrearTipoBoletos())
+            {
+                tipo.ShowDialog();
             }
         }
     }

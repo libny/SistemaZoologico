@@ -26,7 +26,7 @@ namespace SistemaZoologico.VentaBoletos
         private void button1_Click(object sender, EventArgs e)
         {
             var tipo = (TipoBoleto) comboxtipodeboleto.SelectedItem;
-            _listaDetalle.Add(new DatosDetalleVenta(tipo.Id, tipo.Nombre, 1, tipo.Precio));
+            _listaDetalle.Add(new DatosDetalleVenta(tipo.Id, tipo.Descripcion, 1, tipo.Precio));
 
             CalcularTotal();
         }

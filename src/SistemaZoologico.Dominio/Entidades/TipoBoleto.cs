@@ -6,14 +6,14 @@
         {
         }
 
-        public TipoBoleto(string nombre, float precio)
+        public TipoBoleto(string descripcion, float precio)
         {
-            Nombre = nombre;
+            Descripcion = descripcion;
             Precio = precio;
         }
 
 
-        public virtual string Nombre { get; set; }
+        public virtual string Descripcion { get; set; }
 
         public virtual float Precio { get; set; }
 

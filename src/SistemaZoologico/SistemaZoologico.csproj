@@ -50,6 +50,12 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentaBoletos\CrearTipoBoletos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentaBoletos\CrearTipoBoletos.Designer.cs">
+      <DependentUpon>CrearTipoBoletos.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentaBoletos\VentaBoletos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentaBoletos\CrearTipoBoletos.resx">
+      <DependentUpon>CrearTipoBoletos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentaBoletos\VentaBoletos.resx">
       <DependentUpon>VentaBoletos.cs</DependentUpon>

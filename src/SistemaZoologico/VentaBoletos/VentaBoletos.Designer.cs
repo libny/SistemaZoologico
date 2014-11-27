@@ -103,7 +103,7 @@
             // 
             // comboxtipodeboleto
             // 
-            this.comboxtipodeboleto.DisplayMember = "Nombre";
+            this.comboxtipodeboleto.DisplayMember = "Descripcion";
             this.comboxtipodeboleto.FormattingEnabled = true;
             this.comboxtipodeboleto.Location = new System.Drawing.Point(106, 111);
             this.comboxtipodeboleto.Name = "comboxtipodeboleto";
