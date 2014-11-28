@@ -2,7 +2,6 @@
 using System.Linq;
 using NHibernate;
 using NHibernate.Linq;
-using NHibernate.Param;
 using SistemaZoologico.Dominio.Aplicacion.VentaBoletos.Commandos;
 using SistemaZoologico.Dominio.Datos;
 using SistemaZoologico.Dominio.Entidades;
@@ -29,15 +28,32 @@ namespace SistemaZoologico.Dominio.Aplicacion.VentaBoletos
                 {
                     var cliente = new Cliente(datosVenta.NombreCliente, datosVenta.ApellidoCliente,
                         datosVenta.TelefonoCliente);
-                    var venta =new Venta(cliente);
+                    var venta = new Venta(cliente);
 
-                    foreach (var datosDetalleVenta in datosVenta.DetalleVentas)
+                    foreach (DatosDetalleVenta datosDetalleVenta in datosVenta.DetalleVentas)
                     {
-                        venta.AgregarDetalle(session.Get<TipoBoleto>(datosDetalleVenta.IdTipoBoleto), datosDetalleVenta.Cantidad);
+                        venta.AgregarDetalle(session.Get<TipoBoleto>(datosDetalleVenta.IdTipoBoleto),
+                            datosDetalleVenta.Cantidad);
                     }
 
                     venta.CalcularTotal();
                     session.SaveOrUpdate(venta);
+                    transaccion.Commit();
+                }
+            }
+        }
+
+        public void CrearTipoBoleto(CrearTipoBoleto crearTipoBoleto)
+        {
+            using (ISession session = FabricaSession.Crear())
+            {
+                using (ITransaction transaccion = session.BeginTransaction())
+                {
+                    var tipoBoleto = new TipoBoleto(crearTipoBoleto.Descripcion, crearTipoBoleto.Precio);
+
+                    session.SaveOrUpdate(tipoBoleto);
+
+
                     transaccion.Commit();
                 }
             }

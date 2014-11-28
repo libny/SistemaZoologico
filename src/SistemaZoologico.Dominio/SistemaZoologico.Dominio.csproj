@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aplicacion\VentaBoletos\Commandos\CrearTipoBoleto.cs" />
     <Compile Include="Aplicacion\VentaBoletos\Commandos\CrearVenta.cs" />
     <Compile Include="Aplicacion\VentaBoletos\Commandos\DatosDetalleVenta.cs" />
     <Compile Include="Aplicacion\VentaBoletos\ServicioVentaBoletos.cs" />

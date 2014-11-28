@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.numPrecio = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -40,14 +46,63 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Descripcion";
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(82, 23);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(194, 20);
+            this.txtDescripcion.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Precio";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(57, 124);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Aceptar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(218, 124);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Cancelar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // numPrecio
+            // 
+            this.numPrecio.Location = new System.Drawing.Point(82, 62);
+            this.numPrecio.Name = "numPrecio";
+            this.numPrecio.Size = new System.Drawing.Size(194, 20);
+            this.numPrecio.TabIndex = 7;
+            // 
             // CrearTipoBoletos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 174);
+            this.ClientSize = new System.Drawing.Size(363, 174);
+            this.Controls.Add(this.numPrecio);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
             this.Name = "CrearTipoBoletos";
             this.Text = "Crear tipos de boletos";
+            this.Load += new System.EventHandler(this.CrearTipoBoletos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -56,5 +111,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.NumericUpDown numPrecio;
     }
 }
