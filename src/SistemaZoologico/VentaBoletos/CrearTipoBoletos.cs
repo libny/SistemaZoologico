@@ -21,7 +21,14 @@ namespace SistemaZoologico.VentaBoletos
         private void button2_Click(object sender, EventArgs e)
         {
             _servicioVentaBoletos.CrearTipoBoleto(new CrearTipoBoleto(txtDescripcion.Text,
-                Convert.ToDouble(numPrecio.Value)));
+                Convert.ToSingle(numPrecio.Value)));
+
+            Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
