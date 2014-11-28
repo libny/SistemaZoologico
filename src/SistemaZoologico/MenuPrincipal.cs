@@ -26,5 +26,13 @@ namespace SistemaZoologico
                 tipo.ShowDialog();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (var listadeboletos = new ListarTipoDeBoletos())
+            {
+                listadeboletos.ShowDialog();
+            }
+        }
     }
 }

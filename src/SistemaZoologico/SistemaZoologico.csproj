@@ -56,6 +56,18 @@
     <Compile Include="VentaBoletos\CrearTipoBoletos.Designer.cs">
       <DependentUpon>CrearTipoBoletos.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentaBoletos\ListarTipoDeBoletos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentaBoletos\ListarTipoDeBoletos.Designer.cs">
+      <DependentUpon>ListarTipoDeBoletos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentaBoletos\ModificarTipoBoleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentaBoletos\ModificarTipoBoleto.Designer.cs">
+      <DependentUpon>ModificarTipoBoleto.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentaBoletos\VentaBoletos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentaBoletos\CrearTipoBoletos.resx">
       <DependentUpon>CrearTipoBoletos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentaBoletos\ListarTipoDeBoletos.resx">
+      <DependentUpon>ListarTipoDeBoletos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentaBoletos\ModificarTipoBoleto.resx">
+      <DependentUpon>ModificarTipoBoleto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentaBoletos\VentaBoletos.resx">
       <DependentUpon>VentaBoletos.cs</DependentUpon>
