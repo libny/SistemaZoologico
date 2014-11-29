@@ -58,5 +58,24 @@ namespace SistemaZoologico.Dominio.Aplicacion.VentaBoletos
                 }
             }
         }
+
+        public void ModificarTipoBoleto(ModificarTipoBoletos modificarTipoBoletos)
+        {
+            using (ISession session = FabricaSession.Crear())
+            {
+                using (ITransaction transaccion = session.BeginTransaction())
+                {
+                    var tipoBoleto = session.Get<TipoBoleto>(modificarTipoBoletos.Id);
+
+                    tipoBoleto.Descripcion = modificarTipoBoletos.Descripcion;
+                    tipoBoleto.Precio = modificarTipoBoletos.Precio;
+
+                    session.SaveOrUpdate(tipoBoleto);
+
+
+                    transaccion.Commit();
+                }
+            }
+        }
     }
 }
