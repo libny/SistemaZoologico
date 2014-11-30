@@ -58,6 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aplicacion\Animales\Comandos\Crearanimales.cs" />
+    <Compile Include="Aplicacion\Animales\ServiciosAnimales.cs" />
     <Compile Include="Aplicacion\VentaBoletos\Commandos\CrearTipoBoleto.cs" />
     <Compile Include="Aplicacion\VentaBoletos\Commandos\CrearVenta.cs" />
     <Compile Include="Aplicacion\VentaBoletos\Commandos\DatosDetalleVenta.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="Datos\ConnectionStrings.cs" />
     <Compile Include="Datos\FabricaSession.cs" />
     <Compile Include="Datos\MappingScheme.cs" />
+    <Compile Include="Datos\OrigenSobreEscrituraId.cs" />
     <Compile Include="Datos\PrimarkeyConvention.cs" />
     <Compile Include="Entidades\Animal.cs" />
     <Compile Include="Entidades\Cliente.cs" />

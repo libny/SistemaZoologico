@@ -7,7 +7,7 @@ namespace SistemaZoologico.Dominio.Datos
     {
         public void Apply(IIdentityInstance instance)
         {
-            instance.GeneratedBy.Identity();
+           // instance.GeneratedBy.Identity();
         }
     }
 }

@@ -33,8 +33,10 @@ namespace SistemaZoologico.Dominio.Datos
                     .Where(t => typeof (IEntidad).IsAssignableFrom(t))
                     
                     //.IncludeBase<LessonActionBase>()
+
                     .Conventions.Add(DefaultCascade.All())
-                    .Conventions.Add<PrimarkeyConvention>();
+                    .Conventions.Add<PrimarkeyConvention>()
+                    .UseOverridesFromAssemblyOf<OrigenSobreEscrituraId>();
 
                 return x =>
                 {

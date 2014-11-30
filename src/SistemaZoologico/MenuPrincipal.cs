@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SistemaZoologico.Animales;
 using SistemaZoologico.VentaBoletos;
 
 namespace SistemaZoologico
@@ -33,6 +34,16 @@ namespace SistemaZoologico
             {
                 listadeboletos.ShowDialog();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (var animales = new CreacionAnimales())
+            {
+                animales.ShowDialog();
+            }
+            
+
         }
     }
 }
