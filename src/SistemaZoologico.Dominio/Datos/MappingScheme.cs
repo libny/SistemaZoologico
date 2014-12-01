@@ -1,16 +1,19 @@
 ﻿using System;
+
 using AcklenAvenue.Data;
+
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Helpers;
+
 using SistemaZoologico.Dominio.Entidades;
 
 namespace SistemaZoologico.Dominio.Datos
 {
     public class MappingScheme : IDatabaseMappingScheme<MappingConfiguration>
     {
-        private readonly string _configuration;
+        readonly string _configuration;
 
         #region IDatabaseMappingScheme<MappingConfiguration> Members
 
@@ -18,7 +21,6 @@ namespace SistemaZoologico.Dominio.Datos
         {
             _configuration = configuration;
         }
-
 
         public MappingScheme()
         {
@@ -29,22 +31,19 @@ namespace SistemaZoologico.Dominio.Datos
         {
             get
             {
-                AutoPersistenceModel autoPersistenceModel = AutoMap.Assemblies(typeof (IEntidad).Assembly)
-                    .Where(t => typeof (IEntidad).IsAssignableFrom(t))
+                AutoPersistenceModel autoPersistenceModel =
+                    AutoMap.Assemblies(typeof(IEntidad).Assembly).Where(t => typeof(IEntidad).IsAssignableFrom(t))
                     
-                    //.IncludeBase<LessonActionBase>()
-
-                    .Conventions.Add(DefaultCascade.All())
-                    .Conventions.Add<PrimarkeyConvention>()
-                    .UseOverridesFromAssemblyOf<OrigenSobreEscrituraId>();
+                        //.IncludeBase<LessonActionBase>()
+                           .Conventions.Add(DefaultCascade.All()).UseOverridesFromAssemblyOf<OrigenSobreEscrituraId>();
 
                 return x =>
-                {
-                    x.AutoMappings.Add(autoPersistenceModel);
-                    if (_configuration.IsEmpty())
                     {
-                    }
-                };
+                        x.AutoMappings.Add(autoPersistenceModel);
+                        if (_configuration.IsEmpty())
+                        {
+                        }
+                    };
             }
         }
 

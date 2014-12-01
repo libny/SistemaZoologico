@@ -8,7 +8,7 @@ namespace SistemaZoologico.Dominio.Datos
     {
         public void Override(AutoMapping<Origen> mapping)
         {
-            mapping.Id().GeneratedBy.Assigned();
+            mapping.Id(origen => origen.Id).GeneratedBy.Assigned();
         }
     }
 }

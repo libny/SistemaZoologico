@@ -69,7 +69,6 @@
     <Compile Include="Datos\FabricaSession.cs" />
     <Compile Include="Datos\MappingScheme.cs" />
     <Compile Include="Datos\OrigenSobreEscrituraId.cs" />
-    <Compile Include="Datos\PrimarkeyConvention.cs" />
     <Compile Include="Entidades\Animal.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleVenta.cs" />
