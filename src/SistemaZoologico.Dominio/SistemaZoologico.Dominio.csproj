@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aplicacion\Animales\Comandos\Crearanimales.cs" />
+    <Compile Include="Aplicacion\Animales\Comandos\Crearespecie.cs" />
     <Compile Include="Aplicacion\Animales\ServiciosAnimales.cs" />
     <Compile Include="Aplicacion\VentaBoletos\Commandos\CrearTipoBoleto.cs" />
     <Compile Include="Aplicacion\VentaBoletos\Commandos\CrearVenta.cs" />

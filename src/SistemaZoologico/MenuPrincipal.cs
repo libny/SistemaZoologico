@@ -45,5 +45,13 @@ namespace SistemaZoologico
             
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (var especie = new CrearEspecie())
+            {
+                especie.ShowDialog();
+            }
+        }
     }
 }
