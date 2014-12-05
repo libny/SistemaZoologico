@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 using NHibernate;
 using NHibernate.Linq;
+
 using SistemaZoologico.Dominio.Aplicacion.VentaBoletos.Commandos;
 using SistemaZoologico.Dominio.Datos;
 using SistemaZoologico.Dominio.Entidades;
@@ -20,25 +22,27 @@ namespace SistemaZoologico.Dominio.Aplicacion.VentaBoletos
             }
         }
 
-        public void CrearVenta(CrearVenta datosVenta)
+        public int CrearVenta(CrearVenta datosVenta)
         {
             using (ISession session = FabricaSession.Crear())
             {
                 using (ITransaction transaccion = session.BeginTransaction())
                 {
-                    var cliente = new Cliente(datosVenta.NombreCliente, datosVenta.ApellidoCliente,
-                        datosVenta.TelefonoCliente);
+                    var cliente = new Cliente(
+                        datosVenta.NombreCliente, datosVenta.ApellidoCliente, datosVenta.TelefonoCliente);
                     var venta = new Venta(cliente);
 
                     foreach (DatosDetalleVenta datosDetalleVenta in datosVenta.DetalleVentas)
                     {
-                        venta.AgregarDetalle(session.Get<TipoBoleto>(datosDetalleVenta.IdTipoBoleto),
-                            datosDetalleVenta.Cantidad);
+                        venta.AgregarDetalle(
+                            session.Get<TipoBoleto>(datosDetalleVenta.IdTipoBoleto), datosDetalleVenta.Cantidad);
                     }
 
                     venta.CalcularTotal();
                     session.SaveOrUpdate(venta);
+
                     transaccion.Commit();
+                    return venta.Id;
                 }
             }
         }
@@ -52,7 +56,6 @@ namespace SistemaZoologico.Dominio.Aplicacion.VentaBoletos
                     var tipoBoleto = new TipoBoleto(crearTipoBoleto.Descripcion, crearTipoBoleto.Precio);
 
                     session.SaveOrUpdate(tipoBoleto);
-
 
                     transaccion.Commit();
                 }
@@ -72,7 +75,6 @@ namespace SistemaZoologico.Dominio.Aplicacion.VentaBoletos
 
                     session.SaveOrUpdate(tipoBoleto);
 
-
                     transaccion.Commit();
                 }
             }
@@ -84,10 +86,11 @@ namespace SistemaZoologico.Dominio.Aplicacion.VentaBoletos
             {
                 return
                     session.Query<Venta>()
-                        .Where(venta => venta.Id == idVenta)
-                        .Fetch(venta => venta.Cliente)
-                        .FetchMany(venta => venta.Detalle)
-                        .Single();
+                           .Where(venta => venta.Id == idVenta)
+                           .Fetch(venta => venta.Cliente)
+                           .FetchMany(venta => venta.Detalle)
+                           .ThenFetch(venta => venta.TipoBoleto)
+                           .Single();
             }
         }
     }

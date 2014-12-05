@@ -165,6 +165,7 @@
     <EmbeddedResource Include="VentaBoletos\CrearTipoBoletos.resx">
       <DependentUpon>CrearTipoBoletos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentaBoletos\Factura.rdlc" />
     <EmbeddedResource Include="VentaBoletos\ListarTipoDeBoletos.resx">
       <DependentUpon>ListarTipoDeBoletos.cs</DependentUpon>
     </EmbeddedResource>

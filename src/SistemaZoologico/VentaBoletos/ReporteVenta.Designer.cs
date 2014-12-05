@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ReporteVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteVentasBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ReporteVentasBindingSource
+            // 
+            this.ReporteVentasBindingSource.DataMember = "DetalleReportes";
+            this.ReporteVentasBindingSource.DataSource = typeof(SistemaZoologico.VentaBoletos.ReporteVentas);
             // 
             // reportViewer1
             // 
@@ -41,16 +46,11 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.ReporteVentasBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SistemaZoologico.VentaBoletos.Factura.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             this.reportViewer1.Size = new System.Drawing.Size(746, 407);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // ReporteVentasBindingSource
-            // 
-            this.ReporteVentasBindingSource.DataMember = "DetalleReportes";
-            this.ReporteVentasBindingSource.DataSource = typeof(SistemaZoologico.VentaBoletos.ReporteVentas);
             // 
             // ReporteVenta
             // 
