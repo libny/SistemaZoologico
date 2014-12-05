@@ -62,6 +62,12 @@
     <Compile Include="Animales\ListarAnimales.Designer.cs">
       <DependentUpon>ListarAnimales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Animales\ModificacionAnimales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animales\ModificacionAnimales.Designer.cs">
+      <DependentUpon>ModificacionAnimales.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Animales\ListarAnimales.resx">
       <DependentUpon>ListarAnimales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Animales\ModificacionAnimales.resx">
+      <DependentUpon>ModificacionAnimales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

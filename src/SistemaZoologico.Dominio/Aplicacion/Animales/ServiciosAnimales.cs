@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using NHibernate;
 using NHibernate.Linq;
 using SistemaZoologico.Dominio.Aplicacion.Animales.Comandos;
@@ -39,23 +38,59 @@ namespace SistemaZoologico.Dominio.Aplicacion.Animales
 
         public void Crearespecie(Crearespecie datosespecie)
         {
-            using (ISession session = FabricaSession.Crear()) 
+            using (ISession session = FabricaSession.Crear())
             {
                 using (ITransaction trasancion = session.BeginTransaction())
                 {
-                    var especie = new Especie(datosespecie.Nombre,datosespecie.Nombrecientifico,datosespecie.Descripcion);
-            session.SaveOrUpdate(especie);
-            trasancion.Commit();
+                    var especie = new Especie(datosespecie.Nombre, datosespecie.Nombrecientifico,
+                        datosespecie.Descripcion);
+                    session.SaveOrUpdate(especie);
+                    trasancion.Commit();
                 }
             }
-           
         }
 
         public IEnumerable<Animal> ObtenerAnimales()
         {
-            using (var session = FabricaSession.Crear())
+            using (ISession session = FabricaSession.Crear())
             {
                 return session.Query<Animal>().ToList();
+            }
+        }
+
+        public void ModificarAnimal(ModificarAnimales modificarAnimales)
+        {
+            using (ISession session = FabricaSession.Crear())
+            {
+                using (ITransaction transaccion = session.BeginTransaction())
+                {
+                    var animal = session.Get<Animal>(modificarAnimales.IdAnimal);
+                    var especie = session.Get<Especie>(modificarAnimales.IdEspecie);
+
+                    animal.Nombre = modificarAnimales.Nombre;
+                    animal.FechaIngreso = modificarAnimales.FechaIngreso;
+                    animal.FechaNacimiento = modificarAnimales.FechaNacimiento;
+                    animal.Origen = modificarAnimales.OrigenAnimal;
+                    animal.Edad = modificarAnimales.Edad;
+                    animal.Especie = especie;
+
+                    session.SaveOrUpdate(animal);
+
+                    transaccion.Commit();
+                }
+            }
+        }
+
+        public Animal ObtenerAnimal(int id)
+        {
+            using (ISession session = FabricaSession.Crear())
+            {
+                return
+                    session.Query<Animal>()
+                        .Where(animal => animal.Id == id)
+                        .Fetch(animal => animal.Especie)
+                        .Fetch(animal => animal.Origen)
+                        .Single();
             }
         }
     }

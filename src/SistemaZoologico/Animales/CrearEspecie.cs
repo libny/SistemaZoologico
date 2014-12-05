@@ -25,6 +25,8 @@ namespace SistemaZoologico.Animales
             var serviciosAnimales = new ServiciosAnimales();
             serviciosAnimales.Crearespecie(new Crearespecie(textnombre.Text, textnombrecientifico.Text,
                 textdescripcion.Text));
+
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
