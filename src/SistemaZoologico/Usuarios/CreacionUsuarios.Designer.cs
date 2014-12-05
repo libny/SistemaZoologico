@@ -138,6 +138,7 @@
             // 
             // comboRol
             // 
+            this.comboRol.DisplayMember = "Descripcion";
             this.comboRol.FormattingEnabled = true;
             this.comboRol.Location = new System.Drawing.Point(182, 218);
             this.comboRol.Name = "comboRol";
