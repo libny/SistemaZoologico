@@ -83,6 +83,13 @@
     <Compile Include="Animales\ModificacionEspecie.Designer.cs">
       <DependentUpon>ModificacionEspecie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Animales\ReporteAnimales.cs" />
+    <Compile Include="Animales\VistaPreviaAnimales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animales\VistaPreviaAnimales.Designer.cs">
+      <DependentUpon>VistaPreviaAnimales.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +142,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Animales\Animales.rdlc" />
     <EmbeddedResource Include="Animales\CreacionAnimales.resx">
       <DependentUpon>CreacionAnimales.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Animales\ModificacionEspecie.resx">
       <DependentUpon>ModificacionEspecie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Animales\VistaPreviaAnimales.resx">
+      <DependentUpon>VistaPreviaAnimales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
@@ -187,6 +198,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\SistemaZoologico.Animales.ReporteAnimales.datasource" />
     <None Include="Properties\DataSources\SistemaZoologico.Dominio.Entidades.Venta.datasource" />
     <None Include="Properties\DataSources\SistemaZoologico.VentaBoletos.ReporteVentas.datasource" />
     <None Include="Properties\Settings.settings">

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -31,7 +32,7 @@ namespace SistemaZoologico.VentaBoletos
                           venta =>
                           new DetalleReporte
                               {
-                                  Cantidad = venta.Cantidad.ToString(),
+                                  Cantidad = venta.Cantidad.ToString(CultureInfo.InvariantCulture),
                                   NombreCliente = _venta.Cliente.Nombre + " " + _venta.Cliente.Apellido,
                                   DescripcionTipoBoleto = venta.TipoBoleto.Descripcion,
                                   SubTotal = venta.CalcularSubTotal(),

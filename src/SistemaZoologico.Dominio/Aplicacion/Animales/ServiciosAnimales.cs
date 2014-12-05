@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 using NHibernate;
 using NHibernate.Linq;
+
 using SistemaZoologico.Dominio.Aplicacion.Animales.Comandos;
 using SistemaZoologico.Dominio.Datos;
 using SistemaZoologico.Dominio.Entidades;
@@ -18,15 +20,18 @@ namespace SistemaZoologico.Dominio.Aplicacion.Animales
                 using (ITransaction trasancion = session.BeginTransaction())
                 {
                     var especie = session.Get<Especie>(datosanimales.IdEspecie);
-                    var animal = new Animal(datosanimales.Nombre, datosanimales.Edad, especie,
+                    var animal = new Animal(
+                        datosanimales.Nombre,
+                        datosanimales.Edad,
+                        especie,
                         datosanimales.FechaIngreso,
-                        datosanimales.FechaNacimiento, datosanimales.OrigenAnimal);
+                        datosanimales.FechaNacimiento,
+                        datosanimales.OrigenAnimal);
                     session.SaveOrUpdate(animal);
                     trasancion.Commit();
                 }
             }
         }
-
 
         public IEnumerable<Especie> ObtenerEspecies()
         {
@@ -42,8 +47,8 @@ namespace SistemaZoologico.Dominio.Aplicacion.Animales
             {
                 using (ITransaction trasancion = session.BeginTransaction())
                 {
-                    var especie = new Especie(datosespecie.Nombre, datosespecie.Nombrecientifico,
-                        datosespecie.Descripcion);
+                    var especie = new Especie(
+                        datosespecie.Nombre, datosespecie.Nombrecientifico, datosespecie.Descripcion);
                     session.SaveOrUpdate(especie);
                     trasancion.Commit();
                 }
@@ -54,7 +59,7 @@ namespace SistemaZoologico.Dominio.Aplicacion.Animales
         {
             using (ISession session = FabricaSession.Crear())
             {
-                return session.Query<Animal>().ToList();
+                return session.Query<Animal>().Fetch(animal => animal.Origen).Fetch(animal => animal.Especie).ToList();
             }
         }
 
@@ -87,16 +92,16 @@ namespace SistemaZoologico.Dominio.Aplicacion.Animales
             {
                 return
                     session.Query<Animal>()
-                        .Where(animal => animal.Id == id)
-                        .Fetch(animal => animal.Especie)
-                        .Fetch(animal => animal.Origen)
-                        .Single();
+                           .Where(animal => animal.Id == id)
+                           .Fetch(animal => animal.Especie)
+                           .Fetch(animal => animal.Origen)
+                           .Single();
             }
         }
 
         public Especie ObtenerEspecie(int idEspecie)
         {
-            using (var session = FabricaSession.Crear())
+            using (ISession session = FabricaSession.Crear())
             {
                 return session.Get<Especie>(idEspecie);
             }
@@ -108,20 +113,17 @@ namespace SistemaZoologico.Dominio.Aplicacion.Animales
             {
                 using (ITransaction transaccion = session.BeginTransaction())
                 {
-                   
                     var especie = session.Get<Especie>(modificarEspecie.Id);
 
                     especie.Nombre = modificarEspecie.Nombre;
                     especie.Descripcion = modificarEspecie.Descripcion;
                     especie.NombreCientifico = modificarEspecie.Nombrecientifico;
 
-
                     session.SaveOrUpdate(especie);
 
                     transaccion.Commit();
                 }
             }
-            
         }
     }
 }
