@@ -33,9 +33,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -84,15 +85,26 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Location = new System.Drawing.Point(12, 192);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(154, 128);
+            this.groupBox2.Size = new System.Drawing.Size(154, 192);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Animales";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(0, 78);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(154, 23);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Lista animales";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -114,15 +126,15 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button6
+            // button7
             // 
-            this.button6.Location = new System.Drawing.Point(0, 79);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(154, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Lista animales";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button7.Location = new System.Drawing.Point(0, 107);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(154, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "Listar Especie";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // MenuPrincipal
             // 
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

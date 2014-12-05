@@ -93,5 +93,35 @@ namespace SistemaZoologico.Dominio.Aplicacion.Animales
                         .Single();
             }
         }
+
+        public Especie ObtenerEspecie(int idEspecie)
+        {
+            using (var session = FabricaSession.Crear())
+            {
+                return session.Get<Especie>(idEspecie);
+            }
+        }
+
+        public void ModificarEspecie(ModificarEspecie modificarEspecie)
+        {
+            using (ISession session = FabricaSession.Crear())
+            {
+                using (ITransaction transaccion = session.BeginTransaction())
+                {
+                   
+                    var especie = session.Get<Especie>(modificarEspecie.Id);
+
+                    especie.Nombre = modificarEspecie.Nombre;
+                    especie.Descripcion = modificarEspecie.Descripcion;
+                    especie.NombreCientifico = modificarEspecie.Nombrecientifico;
+
+
+                    session.SaveOrUpdate(especie);
+
+                    transaccion.Commit();
+                }
+            }
+            
+        }
     }
 }
