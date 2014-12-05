@@ -50,5 +50,13 @@ namespace SistemaZoologico.Dominio.Aplicacion.Animales
             }
            
         }
+
+        public IEnumerable<Animal> ObtenerAnimales()
+        {
+            using (var session = FabricaSession.Crear())
+            {
+                return session.Query<Animal>().ToList();
+            }
+        }
     }
 }

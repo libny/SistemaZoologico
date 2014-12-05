@@ -53,5 +53,13 @@ namespace SistemaZoologico
                 especie.ShowDialog();
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            using (var listar = new ListarAnimales())
+            {
+                listar.ShowDialog();
+            }
+        }
     }
 }
