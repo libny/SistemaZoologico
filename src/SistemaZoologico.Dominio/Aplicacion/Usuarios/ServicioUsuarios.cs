@@ -35,5 +35,18 @@ namespace SistemaZoologico.Dominio.Aplicacion.Usuarios
                 }
             }
         }
+
+        public Usuario ObtenerUsuario(string contrasena, string nombreUsuario)
+        {
+            ISession session = FabricaSession.Crear();
+
+            Usuario usuario =
+                session.Query<Usuario>()
+                    .SingleOrDefault(
+                        usuario1 => usuario1.NombreUsuario == nombreUsuario && usuario1.Contrasena == contrasena);
+
+
+            return usuario;
+        }
     }
 }

@@ -78,5 +78,13 @@ namespace SistemaZoologico
                 }
             }
         }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            var inica = new IniciarSesion();
+
+            var usuario = inica.ObtenerUsuario();
+            if(usuario == null)Close();
+        }
     }
 }

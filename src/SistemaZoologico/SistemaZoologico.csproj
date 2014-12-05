@@ -32,8 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -92,12 +95,19 @@
     <Compile Include="Usuarios\CreacionUsuarios.Designer.cs">
       <DependentUpon>CreacionUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\IniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\IniciarSesion.Designer.cs">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentaBoletos\CrearTipoBoletos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentaBoletos\CrearTipoBoletos.Designer.cs">
       <DependentUpon>CrearTipoBoletos.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentaBoletos\DetalleReporte.cs" />
     <Compile Include="VentaBoletos\ListarTipoDeBoletos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +120,13 @@
     <Compile Include="VentaBoletos\ModificarTipoBoleto.Designer.cs">
       <DependentUpon>ModificarTipoBoleto.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentaBoletos\ReporteVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentaBoletos\ReporteVenta.Designer.cs">
+      <DependentUpon>ReporteVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentaBoletos\ReporteVentas.cs" />
     <Compile Include="VentaBoletos\VentaBoletos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +159,9 @@
     <EmbeddedResource Include="Usuarios\CreacionUsuarios.resx">
       <DependentUpon>CreacionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentaBoletos\CrearTipoBoletos.resx">
       <DependentUpon>CrearTipoBoletos.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +170,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentaBoletos\ModificarTipoBoleto.resx">
       <DependentUpon>ModificarTipoBoleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentaBoletos\Report1.rdlc" />
+    <EmbeddedResource Include="VentaBoletos\ReporteVenta.resx">
+      <DependentUpon>ReporteVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentaBoletos\VentaBoletos.resx">
       <DependentUpon>VentaBoletos.cs</DependentUpon>
@@ -163,6 +187,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\SistemaZoologico.Dominio.Entidades.Venta.datasource" />
+    <None Include="Properties\DataSources\SistemaZoologico.VentaBoletos.ReporteVentas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -77,5 +77,18 @@ namespace SistemaZoologico.Dominio.Aplicacion.VentaBoletos
                 }
             }
         }
+
+        public Venta ObtenerVenta(int idVenta)
+        {
+            using (ISession session = FabricaSession.Crear())
+            {
+                return
+                    session.Query<Venta>()
+                        .Where(venta => venta.Id == idVenta)
+                        .Fetch(venta => venta.Cliente)
+                        .FetchMany(venta => venta.Detalle)
+                        .Single();
+            }
+        }
     }
 }
