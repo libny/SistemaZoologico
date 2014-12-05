@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using SistemaZoologico.Animales;
+using SistemaZoologico.Usuarios;
 using SistemaZoologico.VentaBoletos;
 
 namespace SistemaZoologico
@@ -42,8 +43,6 @@ namespace SistemaZoologico
             {
                 animales.ShowDialog();
             }
-            
-
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -67,6 +66,16 @@ namespace SistemaZoologico
             using (var listar = new ListarEspecie())
             {
                 listar.ShowDialog();
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            using (var usuario = new CreacionUsuarios())
+            {
+                {
+                    usuario.ShowDialog();
+                }
             }
         }
     }

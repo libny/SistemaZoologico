@@ -86,6 +86,12 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\CreacionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\CreacionUsuarios.Designer.cs">
+      <DependentUpon>CreacionUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentaBoletos\CrearTipoBoletos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\CreacionUsuarios.resx">
+      <DependentUpon>CreacionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentaBoletos\CrearTipoBoletos.resx">
       <DependentUpon>CrearTipoBoletos.cs</DependentUpon>
