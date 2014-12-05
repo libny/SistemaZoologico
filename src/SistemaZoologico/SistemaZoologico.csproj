@@ -171,7 +171,6 @@
     <EmbeddedResource Include="VentaBoletos\ModificarTipoBoleto.resx">
       <DependentUpon>ModificarTipoBoleto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentaBoletos\Report1.rdlc" />
     <EmbeddedResource Include="VentaBoletos\ReporteVenta.resx">
       <DependentUpon>ReporteVenta.cs</DependentUpon>
     </EmbeddedResource>
